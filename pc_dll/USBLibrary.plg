@@ -1,0 +1,42 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: USBLibrary - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\odebicki\LOCALS~1\Temp\RSP610B.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "USBLIBRARY_EXPORTS" /Fp"Release/USBLibrary.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\TMP\BasicUSB\pc_dll\USBLibrary.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\odebicki\LOCALS~1\Temp\RSP610B.tmp" 
+Creating temporary file "C:\DOCUME~1\odebicki\LOCALS~1\Temp\RSP610C.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "USBLIBRARY_EXPORTS" /Fp"Release/USBLibrary.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\TMP\BasicUSB\pc_dll\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\odebicki\LOCALS~1\Temp\RSP610C.tmp" 
+Creating temporary file "C:\DOCUME~1\odebicki\LOCALS~1\Temp\RSP610D.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib setupapi.lib /nologo /dll /incremental:no /pdb:"USBLibrary.pdb" /machine:I386 /out:"../USBLibrary.dll" /implib:"../USBLibrary.lib" 
+.\Release\StdAfx.obj
+.\Release\USBLibrary.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\odebicki\LOCALS~1\Temp\RSP610D.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+USBLibrary.cpp
+Linking...
+   Creating library ../USBLibrary.lib and object ../USBLibrary.exp
+
+
+
+<h3>Results</h3>
+USBLibrary.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

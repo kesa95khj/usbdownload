@@ -1,0 +1,65 @@
+; Installation inf for the ATMEL AT91xxxxx Test Board
+; Terminal Application using standard Windows CDC driver
+; (c) Copyright 2004 ATMEL
+;
+
+[Version]
+DriverVer =10/06/1999,5.00.2157.0
+LayoutFile=Layout.inf
+Signature="$CHICAGO$"
+Class=Modem
+ClassGUID={4D36E96D-E325-11CE-BFC1-08002BE10318}
+Provider=%Mfg%
+
+[Manufacturer]
+%Mfg% = Models
+
+[ControlFlags]
+ExcludeFromSelect=USB\VID_03EB&PID_6119
+
+[DestinationDirs]
+FakeModemCopyFileSection=12
+DefaultDestDir=12
+
+[Models]
+%AT91MSG% = AT91SAM,USB\VID_03EB&PID_6124
+
+[AT91SAM.NT]
+CopyFiles=FakeModemCopyFileSection
+AddReg=USB,ATMEL.resp,AT91SAM.AddReg
+
+[AT91SAM.NT.Services]
+AddService=usbser, 0x00000000, LowerFilter_Service_Inst
+
+[AT91SAM.NT.HW]
+AddReg=LowerFilterAddReg
+
+[LowerFilterAddReg]
+HKR,,"LowerFilters",0x00010000,"usbser"
+
+[LowerFilter_Service_Inst]
+DisplayName=%USBFilterString%
+ServiceType= 1
+StartType = 3
+ErrorControl = 0
+ServiceBinary = %12%\usbser.sys
+
+[FakeModemCopyFileSection]
+usbser.sys,,,0x20
+
+[Strings]
+Mfg = "ATMEL CORPORATION"
+AT91MSG = "ATMEL AT91 USB serial emulation"
+USBFilterString ="AT91 USB serial emulation"
+
+[USB]
+HKR,,FriendlyDriver,,Unimodem.vxd
+HKR,,DevLoader,,*vcomm
+HKR,,ConfigDialog,,serialui.dll
+HKR,,AttachedTo,,COM5
+HKR,,EnumPropPages,,"serialui.dll,EnumPropPages"
+HKR,,DeviceType, 0, 01 ;
+HKR,,PortSubClass,1,02
+
+[AT91SAM.AddReg] ;AT91SAM USB serial emulation
+HKR,, Properties, 1, 00,00,00,00, 00,00,00,00, 00,00,00,00,00,00,00,00, 00,00,00,00, 00,00,00,00, 00,c2,01,00,00,C2,01,00
